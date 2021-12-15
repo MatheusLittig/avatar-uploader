@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react'
 
-export const { styled, getCssText, globalCss, createTheme } = createStitches({
+export const { styled, globalCss, getCssText, createTheme } = createStitches({
   theme: {
     colors: {
       //mutable
@@ -8,24 +8,16 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       text: '#677489',
 
       //unmutables
+      white: '#FFFFFF',
       gray: '#C3CBD5',
-      red: '#FF4545',
-      blue: '#36A3FF',
-      yellow: '#FFD644',
-      green: '#28DF99',
-      orange: '#FFA400',
-      header_gradient: 'linear-gradient(to right, #101010, #151515)',
+      green: '#60d685',
 
       //low-scale
-      low_red: '#2a1c1c',
       low_gray: '#F2F5F8',
-      low_green: '#172922',
-      low_yellow: '#393528',
-      low_purple: '#332b36',
-      low_pink: '#F05454',
-      low_orange: '#393028',
-      low_cyan: '#293539',
-      low_blue: '#15202b',
+      low_green: 'rgba(96,214,133,0.1)',
+
+      //high-scale
+      high_green: '#469F62',
     },
     fontSizes: {
       1: '12px',

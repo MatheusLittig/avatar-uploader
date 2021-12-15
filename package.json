@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest --coverage",
     "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.37",
     "babel-jest": "^27.4.5",
     "eslint": "^8.4.1",
@@ -22,6 +24,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
+    "jest-stitches": "^1.0.4",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   },

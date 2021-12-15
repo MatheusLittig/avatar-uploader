@@ -1,3 +1,5 @@
+import { Button } from '@/components/elements';
+
 export const HomeView = () => {
-  return <div>Hello World</div>;
+  return <Button type="filled">Save</Button>;
 };
