@@ -15,7 +15,11 @@ export default class Document extends NextDocument {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="/svgs/favicon.svg" type="image/svg" />
+          <link
+            rel="shortcut icon"
+            href="/svgs/fav-icon.svg"
+            type="image/svg"
+          />
         </Head>
         <body>
           <Main />
