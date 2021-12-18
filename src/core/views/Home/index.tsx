@@ -1,6 +1,6 @@
 import { PageTemplate } from '@/components/templates';
 import { useHomeContext } from '@/core/contexts';
-import { DropFileArea, ResizeArea } from './components';
+import { DropFileArea, ErrorArea, ResetButton, ResizeArea } from './components';
 import { ContentArea, ContentAreaWrapper } from './styles';
 
 export const HomeView = () => {
@@ -13,8 +13,9 @@ export const HomeView = () => {
 
         {(steep.steep_2 || steep.error) && (
           <ContentAreaWrapper>
+            <ResetButton />
             {steep.steep_2 && <ResizeArea />}
-            {steep.error && <p style={{ color: 'red' }}>Invalid image</p>}
+            {steep.error && <ErrorArea />}
           </ContentAreaWrapper>
         )}
       </ContentArea>

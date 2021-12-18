@@ -20,6 +20,5 @@ export const ContentAreaWrapper = styled('div', {
 
   display: 'flex',
   alignItems: 'center',
-
   gap: '30px',
 });

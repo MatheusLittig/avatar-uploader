@@ -6,8 +6,8 @@ export const Header = () => {
     <HeaderWrapper>
       <Image
         src="/svgs/app-logo.svg"
-        width={170}
-        height={50}
+        width={140}
+        height={41}
         alt="Avatar Uploader"
       />
     </HeaderWrapper>

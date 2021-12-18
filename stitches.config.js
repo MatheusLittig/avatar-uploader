@@ -11,10 +11,12 @@ export const { styled, globalCss, css, getCssText, createTheme } = createStitche
       white: '#FFFFFF',
       gray: '#C3CBD5',
       green: '#60d685',
+      red: '#FF7272',
 
       //low-scale
       low_gray: '#F2F5F8',
       low_green: 'rgba(96,214,133,0.3)',
+      low_red: 'rgba(255, 114, 114, 0.1)',
 
       //high-scale
       high_green: '#469F62',

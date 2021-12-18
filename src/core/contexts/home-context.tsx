@@ -18,6 +18,7 @@ type HomeContextData = {
   steep: Steep;
   setAvatarPic: Dispatch<AvatarPic>;
   onChangePic(event: any): void;
+  resetContext(): void;
 };
 
 export const HomeContext = createContext({} as HomeContextData);
@@ -52,6 +53,20 @@ export const HomeProvider: React.FC = ({ children }) => {
     }
   }
 
+  function resetContext() {
+    setAvatarPic({
+      src: '',
+      alt: '',
+      size: [0],
+    });
+    setSteep({
+      steep_1: true,
+      steep_2: false,
+      steep_3: false,
+      error: false,
+    });
+  }
+
   return (
     <HomeContext.Provider
       value={{
@@ -59,6 +74,7 @@ export const HomeProvider: React.FC = ({ children }) => {
         steep,
         setAvatarPic,
         onChangePic,
+        resetContext,
       }}
     >
       {children}
