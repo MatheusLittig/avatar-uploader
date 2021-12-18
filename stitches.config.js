@@ -14,7 +14,7 @@ export const { styled, globalCss, css, getCssText, createTheme } = createStitche
 
       //low-scale
       low_gray: '#F2F5F8',
-      low_green: 'rgba(96,214,133,0.1)',
+      low_green: 'rgba(96,214,133,0.3)',
 
       //high-scale
       high_green: '#469F62',

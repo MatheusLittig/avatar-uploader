@@ -8,6 +8,20 @@ export const AreaWrapper = styled('div', {
 
   background: '$low_gray',
   border: '3px dashed $gray',
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  gap: '5px',
+
+  span: {
+    fontWeight: '500',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+  },
 });
 
 export const FileInput = styled('input', {

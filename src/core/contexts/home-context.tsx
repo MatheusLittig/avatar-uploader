@@ -6,29 +6,41 @@ type AvatarPic = {
   size: number[];
 };
 
-interface HomeContextData {
-  avatarPic: AvatarPic;
+type Steep = {
+  steep_1: boolean;
+  steep_2: boolean;
+  steep_3: boolean;
   error: boolean;
+};
+
+type HomeContextData = {
+  avatarPic: AvatarPic;
+  steep: Steep;
   setAvatarPic: Dispatch<AvatarPic>;
   onChangePic(event: any): void;
-}
+};
 
 export const HomeContext = createContext({} as HomeContextData);
 
 export const HomeProvider: React.FC = ({ children }) => {
-  const [avatarPic, setAvatarPic] = useState({
+  const [avatarPic, setAvatarPic] = useState<AvatarPic>({
     src: '',
     alt: '',
     size: [0],
   });
-  const [error, setError] = useState(false);
+  const [steep, setSteep] = useState<Steep>({
+    steep_1: true,
+    steep_2: false,
+    steep_3: false,
+    error: false,
+  });
 
   function onChangePic(event: any) {
     const [file]: any = event.target.files;
     if (
       file.name.slice(file.name.length - 4) !== ('.png' || '.svg' || '.jpg')
     ) {
-      return setError(true);
+      return setSteep({ ...steep, steep_1: false, error: true });
     }
     if (file) {
       setAvatarPic({
@@ -36,7 +48,7 @@ export const HomeProvider: React.FC = ({ children }) => {
         alt: file.name,
         size: [100],
       });
-      return setError(false);
+      return setSteep({ ...steep, steep_1: false, steep_2: true });
     }
   }
 
@@ -44,7 +56,7 @@ export const HomeProvider: React.FC = ({ children }) => {
     <HomeContext.Provider
       value={{
         avatarPic,
-        error,
+        steep,
         setAvatarPic,
         onChangePic,
       }}

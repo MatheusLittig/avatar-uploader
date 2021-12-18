@@ -1,26 +1,23 @@
-import { Avatar, RangeSlider } from '@/components/elements';
 import { PageTemplate } from '@/components/templates';
 import { useHomeContext } from '@/core/contexts';
-import { DropFileArea } from './components';
+import { DropFileArea, ResizeArea } from './components';
+import { ContentArea, ContentAreaWrapper } from './styles';
 
 export const HomeView = () => {
-  const { error, setAvatarPic, avatarPic } = useHomeContext();
+  const { steep } = useHomeContext();
 
   return (
     <PageTemplate title="Home">
-      <DropFileArea />
+      <ContentArea>
+        {steep.steep_1 && <DropFileArea />}
 
-      <Avatar src={avatarPic.src} size={`${avatarPic.size[0]}%`} />
-
-      <RangeSlider
-        step={0.1}
-        min={0}
-        max={200}
-        values={avatarPic.size}
-        onChange={values => setAvatarPic({ ...avatarPic, size: values })}
-      />
-
-      {error && <p style={{ color: 'red' }}>Invalid image</p>}
+        {(steep.steep_2 || steep.error) && (
+          <ContentAreaWrapper>
+            {steep.steep_2 && <ResizeArea />}
+            {steep.error && <p style={{ color: 'red' }}>Invalid image</p>}
+          </ContentAreaWrapper>
+        )}
+      </ContentArea>
     </PageTemplate>
   );
 };

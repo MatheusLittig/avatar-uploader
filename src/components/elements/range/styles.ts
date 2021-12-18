@@ -2,7 +2,7 @@ import { styled } from '@stitches/react';
 
 export const RenderTrack = styled('div', {
   height: '4px',
-  width: '100%',
+  width: '280px',
   backgroundColor: '$low_green',
 });
 

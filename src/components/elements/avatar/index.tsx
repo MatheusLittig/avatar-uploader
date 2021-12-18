@@ -1,7 +1,7 @@
-type AvatarProps = {
+interface AvatarProps {
   src: string;
   size: string | number;
-};
+}
 
 export const Avatar = ({ src, size }: AvatarProps) => {
   return (
