@@ -1,4 +1,5 @@
 import { createContext, Dispatch, useContext, useState } from 'react';
+import html2canvas from 'html2canvas';
 
 type AvatarPic = {
   src: string;
@@ -9,7 +10,6 @@ type AvatarPic = {
 type Steep = {
   steep_1: boolean;
   steep_2: boolean;
-  steep_3: boolean;
   error: boolean;
 };
 
@@ -19,6 +19,7 @@ type HomeContextData = {
   setAvatarPic: Dispatch<AvatarPic>;
   onChangePic(event: any): void;
   resetContext(): void;
+  saveImage(): void;
 };
 
 export const HomeContext = createContext({} as HomeContextData);
@@ -32,7 +33,6 @@ export const HomeProvider: React.FC = ({ children }) => {
   const [steep, setSteep] = useState<Steep>({
     steep_1: true,
     steep_2: false,
-    steep_3: false,
     error: false,
   });
 
@@ -53,6 +53,22 @@ export const HomeProvider: React.FC = ({ children }) => {
     }
   }
 
+  async function saveImage() {
+    // TO-DO: verify a way to do it without using html2canvas
+    const image = await html2canvas(document.getElementById('avatar')).then(
+      canvas => canvas.toDataURL(),
+    );
+
+    return (
+      setAvatarPic({
+        alt: 'user-profile image',
+        src: image,
+        size: [100],
+      }),
+      setSteep({ ...steep, steep_2: false, steep_1: true })
+    );
+  }
+
   function resetContext() {
     setAvatarPic({
       src: '',
@@ -62,7 +78,6 @@ export const HomeProvider: React.FC = ({ children }) => {
     setSteep({
       steep_1: true,
       steep_2: false,
-      steep_3: false,
       error: false,
     });
   }
@@ -73,6 +88,7 @@ export const HomeProvider: React.FC = ({ children }) => {
         avatarPic,
         steep,
         setAvatarPic,
+        saveImage,
         onChangePic,
         resetContext,
       }}

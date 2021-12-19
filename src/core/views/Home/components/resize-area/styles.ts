@@ -11,5 +11,14 @@ export const ResizeAreaWrapper = styled('div', {
     flexDirection: 'column',
 
     gap: '15px',
+
+    span: {
+      paddingTop: '15px',
+      width: '100%',
+
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
   },
 });

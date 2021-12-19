@@ -16,6 +16,7 @@ export const Avatar = ({ src, size, error }: AvatarProps) => {
         </>
       ) : (
         <div
+          id="avatar"
           style={{
             backgroundImage: `url(${src})`,
             width: '100px',

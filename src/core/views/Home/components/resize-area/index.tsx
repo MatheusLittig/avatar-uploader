@@ -1,9 +1,9 @@
-import { Avatar, RangeSlider } from '@/components/elements';
+import { Avatar, Button, RangeSlider } from '@/components/elements';
 import { useHomeContext } from '@/core/contexts';
 import { ResizeAreaWrapper } from './styles';
 
 export const ResizeArea = () => {
-  const { setAvatarPic, avatarPic } = useHomeContext();
+  const { setAvatarPic, avatarPic, saveImage } = useHomeContext();
 
   return (
     <ResizeAreaWrapper>
@@ -18,6 +18,12 @@ export const ResizeArea = () => {
           values={avatarPic.size}
           onChange={values => setAvatarPic({ ...avatarPic, size: values })}
         />
+
+        <span>
+          <Button type="filled" onClick={saveImage}>
+            Save
+          </Button>
+        </span>
       </div>
     </ResizeAreaWrapper>
   );

@@ -10,17 +10,23 @@ export const AreaWrapper = styled('div', {
   border: '3px dashed $gray',
 
   display: 'flex',
-  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
 
-  gap: '5px',
+  gap: '50px',
 
-  span: {
-    fontWeight: '500',
+  div: {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    gap: '5px',
+    justifyContent: 'center',
+
+    span: {
+      fontWeight: '500',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+    },
   },
 });
 
@@ -31,4 +37,8 @@ export const FileInput = styled('input', {
   height: '180px',
   top: '0',
   left: '0',
+});
+
+export const AvatarImg = styled('img', {
+  borderRadius: '50%',
 });
