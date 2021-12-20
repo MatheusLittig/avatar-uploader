@@ -6,7 +6,7 @@ interface RangeSliderProps {
   min: number;
   max: number;
   values: number[];
-  onChange: (values: number[]) => void;
+  onChange?: (values: number[]) => void;
 }
 
 export const RangeSlider = ({
@@ -22,12 +22,16 @@ export const RangeSlider = ({
       min={min}
       max={max}
       renderTrack={({ props, children }) => (
-        <RenderTrack {...props} style={{ ...props.style }}>
+        <RenderTrack data-testid="track" {...props} style={{ ...props.style }}>
           {children}
         </RenderTrack>
       )}
       renderThumb={({ props }) => (
-        <RenderThumb {...props} style={{ ...props.style }} />
+        <RenderThumb
+          data-testid="thumb"
+          {...props}
+          style={{ ...props.style }}
+        />
       )}
       values={values}
       onChange={onChange}

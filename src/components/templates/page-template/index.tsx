@@ -8,7 +8,7 @@ interface PageTempalteProps {
 export const PageTemplate = ({ children, title }: PageTempalteProps) => {
   return (
     <>
-      <title>{title}</title>
+      <title data-testid="page-title">{title}</title>
       <TemplateWrapper>{children}</TemplateWrapper>
     </>
   );
