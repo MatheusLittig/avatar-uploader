@@ -9,7 +9,6 @@ export const DropFileArea = () => {
     <AreaWrapper>
       <FileInput
         type="file"
-        accept="image/png, image/svg, image/jpg"
         style={{ cursor: 'pointer' }}
         onChange={e => onChangePic(e)}
       />

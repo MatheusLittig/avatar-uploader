@@ -38,8 +38,12 @@ export const HomeProvider: React.FC = ({ children }) => {
 
   function onChangePic(event: any) {
     const [file]: any = event.target.files;
+    const file_ext = file.name.slice(file.name.length - 5);
     if (
-      file.name.slice(file.name.length - 4) !== ('.png' || '.svg' || '.jpg')
+      !file_ext.includes('png') &&
+      !file_ext.includes('jpg') &&
+      !file_ext.includes('jpeg') &&
+      !file_ext.includes('svg')
     ) {
       return setSteep({ ...steep, steep_1: false, error: true });
     }

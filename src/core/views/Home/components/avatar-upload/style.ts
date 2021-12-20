@@ -1,6 +1,6 @@
 import { styled } from '@stitches/react';
 
-export const ContentArea = styled('div', {
+export const Wrapper = styled('div', {
   height: '100%',
 
   display: 'flex',
