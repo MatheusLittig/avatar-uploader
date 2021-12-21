@@ -1,13 +1,13 @@
 import { createContext, Dispatch, useContext, useState } from 'react';
 import html2canvas from 'html2canvas';
 
-type AvatarPic = {
+export type AvatarPic = {
   src: string;
   alt: string;
   size: number[];
 };
 
-type Steep = {
+export type Steep = {
   steep_1: boolean;
   steep_2: boolean;
   error: boolean;

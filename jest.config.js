@@ -4,8 +4,7 @@ module.exports = {
   snapshotSerializers: ['jest-stitches'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleNameMapper: {
-    "^@components(.*)$": "<rootDir>/components$1",
-    "^@pages(.*)$": "<rootDir>/pages$1",
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   testEnvironment: 'jsdom',
 };

@@ -3,17 +3,32 @@ import { DropFileArea, ErrorArea, ResetButton, ResizeArea } from '../';
 import { Wrapper, ContentAreaWrapper } from './style';
 
 export const AvatarUpload = () => {
-  const { steep } = useHomeContext();
+  const {
+    steep,
+    avatarPic,
+    saveImage,
+    onChangePic,
+    setAvatarPic,
+    resetContext,
+  } = useHomeContext();
 
   return (
     <Wrapper>
-      {steep.steep_1 && <DropFileArea />}
+      {steep?.steep_1 && (
+        <DropFileArea onChange={onChangePic} avatarPic={avatarPic} />
+      )}
 
-      {(steep.steep_2 || steep.error) && (
+      {(steep?.steep_2 || steep?.error) && (
         <ContentAreaWrapper>
-          <ResetButton />
-          {steep.steep_2 && <ResizeArea />}
-          {steep.error && <ErrorArea />}
+          <ResetButton onReset={resetContext} />
+          {steep?.steep_2 && (
+            <ResizeArea
+              avatarPic={avatarPic}
+              saveImage={saveImage}
+              setAvatarPic={setAvatarPic}
+            />
+          )}
+          {steep?.error && <ErrorArea />}
         </ContentAreaWrapper>
       )}
     </Wrapper>

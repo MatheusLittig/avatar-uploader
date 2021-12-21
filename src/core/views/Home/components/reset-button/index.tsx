@@ -1,15 +1,16 @@
 import { IconButton } from '@/components/elements';
-import { useHomeContext } from '@/core/contexts';
 import { FiX } from 'react-icons/fi';
 
-export const ResetButton = () => {
-  const { resetContext } = useHomeContext();
+interface ResetButtonProps {
+  onReset: () => void;
+}
 
+export const ResetButton = ({ onReset }: ResetButtonProps) => {
   return (
     <IconButton
       type="transparent"
       style={{ position: 'absolute', top: 20, right: 20 }}
-      onClick={resetContext}
+      onClick={onReset}
     >
       <FiX />
     </IconButton>

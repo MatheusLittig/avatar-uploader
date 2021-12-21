@@ -1,13 +1,22 @@
 import { Avatar, Button, RangeSlider } from '@/components/elements';
-import { useHomeContext } from '@/core/contexts';
+import { AvatarPic } from '@/core/contexts';
+import { Dispatch } from 'react';
 import { ResizeAreaWrapper } from './styles';
 
-export const ResizeArea = () => {
-  const { setAvatarPic, avatarPic, saveImage } = useHomeContext();
+interface ResizeAreaProps {
+  avatarPic: AvatarPic;
+  saveImage: () => void;
+  setAvatarPic: any;
+}
 
+export const ResizeArea = ({
+  avatarPic,
+  saveImage,
+  setAvatarPic,
+}: ResizeAreaProps) => {
   return (
     <ResizeAreaWrapper>
-      <Avatar src={avatarPic.src} size={`${avatarPic.size[0]}%`} />
+      <Avatar src={avatarPic?.src} size={`${avatarPic?.size[0]}%`} />
 
       <div>
         <p>Crop</p>
@@ -15,7 +24,7 @@ export const ResizeArea = () => {
           step={0.1}
           min={0}
           max={200}
-          values={avatarPic.size}
+          values={avatarPic?.size}
           onChange={values => setAvatarPic({ ...avatarPic, size: values })}
         />
 

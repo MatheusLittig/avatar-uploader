@@ -1,23 +1,26 @@
-import { useHomeContext } from '@/core/contexts';
+import { AvatarPic, useHomeContext } from '@/core/contexts';
 import { AreaWrapper, FileInput, AvatarImg } from './styles';
 import { FiImage } from 'react-icons/fi';
 
-export const DropFileArea = () => {
-  const { onChangePic, avatarPic } = useHomeContext();
+interface DropFileAreaProps {
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  avatarPic?: AvatarPic;
+}
 
+export const DropFileArea = ({ onChange, avatarPic }: DropFileAreaProps) => {
   return (
     <AreaWrapper>
       <FileInput
         type="file"
         style={{ cursor: 'pointer' }}
-        onChange={e => onChangePic(e)}
+        onChange={e => onChange(e)}
       />
-      {avatarPic.src !== '' && (
+      {avatarPic && avatarPic.src !== '' && (
         <AvatarImg src={avatarPic.src} alt={avatarPic.alt} />
       )}
 
       <div>
-        <span>
+        <span data-testid="title-area">
           <FiImage /> Organization Logo
         </span>
 
