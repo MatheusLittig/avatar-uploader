@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="#dart-sobre">About</a> &#xa0; | &#xa0; 
-  <a href="#rocket-tecnologias">Dependencies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-começando">Getting Started</a> &#xa0; &#xa0;
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#rocket-techs">Dependencies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-getting-started">Getting Started</a> &#xa0; &#xa0;
 </p>
 
 <br>
