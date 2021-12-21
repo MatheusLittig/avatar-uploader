@@ -19,6 +19,14 @@ export const ResizeAreaWrapper = styled('div', {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
+
+      '@media screen and (max-width: 768px)': {
+        justifyContent: 'center',
+      },
     },
+  },
+
+  '@media screen and (max-width: 768px)': {
+    flexDirection: 'column',
   },
 });

@@ -20,5 +20,16 @@ export const ContentAreaWrapper = styled('div', {
 
   display: 'flex',
   alignItems: 'center',
+  flexWrap: 'wrap',
   gap: '30px',
+
+  '@media screen and (max-width: 768px)': {
+    width: 'auto',
+    height: 'auto',
+    padding: '20px',
+
+    justifyContent: 'center',
+
+    gap: '20px',
+  },
 });
